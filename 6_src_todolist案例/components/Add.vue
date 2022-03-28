@@ -17,8 +17,12 @@ export default {
   props: ["addTodos"],
   methods: {
     add(e) {
-      console.log(e.target.value);
-      this.addTodos(e.target.value);
+      if (!e.target.value.trim()) {
+        alert("输入不能为空");
+      } else {
+        this.addTodos(e.target.value);
+        e.target.value = "";
+      }
     },
   },
 };
