@@ -21,6 +21,7 @@ export default {
     return {
       musicName: "",
       musicAlbum: [],
+      musicId: "",
     };
   },
   // 5.mounted
@@ -28,7 +29,7 @@ export default {
   methods: {
     searchMusic() {
       axios
-        .get("http://localhost:3000/search", {
+        .get("http://cloud-music.pl-fe.cn/search", {
           params: {
             keywords: this.musicName,
             limit: 20,
@@ -36,7 +37,6 @@ export default {
         })
         .then((res) => {
           this.musicAlbum = res.data.result.songs;
-          // console.log(this.musicAlbum);
           this.$bus.$emit("getMusicAlbum", this.musicAlbum);
         })
         .catch((err) => {

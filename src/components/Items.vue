@@ -2,7 +2,7 @@
   <ul>
     <li v-for="music in itemMusicAlbum" :key="music.id">
       <span>{{ music.name }}</span>
-      <audio :src="musicSrc" autoplay></audio>
+      <audio :src="musicSrc" ref="play"></audio>
       <button @click="playMusic(music.id)">播放</button>
     </li>
   </ul>
@@ -16,6 +16,7 @@ export default {
     return {
       itemMusicAlbum: [],
       musicSrc: "",
+      musicPlay: true,
     };
   },
   mounted() {
@@ -27,7 +28,7 @@ export default {
   methods: {
     playMusic(musicId) {
       axios
-        .get("http://localhost:3000/song/url", {
+        .get("http://cloud-music.pl-fe.cn/song/url", {
           params: {
             id: musicId,
             br: 320000,
@@ -35,6 +36,11 @@ export default {
         })
         .then((res) => {
           this.musicSrc = res.data.data[0].url;
+          this.musicPlay = this.$refs.play[0].paused;
+          console.log(this.musicPlay);
+        })
+        .catch((err) => {
+          console.log(err);
         });
     },
   },
