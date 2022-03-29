@@ -1,22 +1,42 @@
 <template>
-  <div>
-    <School />
-    <hr />
-    <Student />
+  <div id="root">
+    <Search />
+    <Music />
+    <Sum />
   </div>
 </template>
 
 <script>
-import Student from "./components/Student.vue";
-import School from "./components/School.vue";
+import Search from "./components/Search.vue";
+import Music from "./components/Music.vue";
+import Sum from "./components/Sum.vue";
 export default {
   name: "App",
-  components: { Student, School },
   data() {
     return {};
+  },
+  components: {
+    Search,
+    Music,
+    Sum,
   },
 };
 </script>
 
-<style>
+<style lang='less'>
+* {
+  margin: 0;
+  padding: 0;
+}
+#root {
+  box-sizing: border-box;
+  width: 600px;
+  border: 2px solid rgb(194, 194, 193);
+  margin: 100px auto;
+  padding: 20px;
+  li {
+    margin: 0;
+    list-style: none;
+  }
+}
 </style>

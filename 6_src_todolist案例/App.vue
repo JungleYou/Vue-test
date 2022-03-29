@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import Add from "./components/Add.vue";
-import Todos from "./components/Todos.vue";
-import Sum from "./components/Sum.vue";
+import Add from "../6_src_todolist案例/components/Add.vue";
+import Todos from "../6_src_todolist案例/components/Todos.vue";
+import Sum from "../6_src_todolist案例/components/Sum.vue";
 import { nanoid } from "nanoid";
 export default {
   name: "App",
