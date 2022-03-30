@@ -1,7 +1,7 @@
 <template>
   <div class="category">
     <h1>{{ title }}分类</h1>
-    <slot></slot>
+    <slot :games="games"></slot>
   </div>
 </template>
     
@@ -9,6 +9,11 @@
 export default {
   name: "Category",
   props: ["title"],
+  data() {
+    return {
+      games: ["联盟", "英雄", "荣耀", "王者", "吃鸡"],
+    };
+  },
 };
 </script>
 
