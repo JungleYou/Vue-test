@@ -5,9 +5,7 @@
     <div class="demo2">
       <router-link to="/school/news" active-class="active">News</router-link>
       <router-link to="/school/msg" active-class="active">msg</router-link>
-      <keep-alive include="News">
-        <router-view></router-view>
-      </keep-alive>
+      <router-view></router-view>
     </div>
   </div>
 </template>

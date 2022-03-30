@@ -59,6 +59,9 @@ export default {
 a {
   cursor: pointer;
 }
+a:hover {
+  color: rgb(177, 40, 40);
+}
 .msg {
   margin-left: 20px;
 }
